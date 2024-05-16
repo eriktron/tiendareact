@@ -1,8 +1,10 @@
+import Layaout from "../../Components/Layout"
+
 function Home() {
   return (    
-      <div className="bg-lime-200">
-          Home
-      </div>    
+      <Layaout>
+        Home
+      </Layaout>
   )
 }
 

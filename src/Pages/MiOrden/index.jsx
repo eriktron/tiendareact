@@ -1,12 +1,12 @@
 import Layaout from "../../Components/Layout"
 
-function NotFound() {
+function MiOrden() {
 
     return (      
         <Layaout>
-            Not Found
+        Mi Orden
         </Layaout>      
     )
   }
   
-export default NotFound
+export default MiOrden

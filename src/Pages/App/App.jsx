@@ -1,19 +1,19 @@
 import { useRoutes, BrowserRouter } from 'react-router-dom'
 import Home from '../Home'
-import MyAccount from '../MyAccount'
-import MyOrder from '../MyOrder'
+import MiCuenta from '../MiCuenta'
+import MiOrden from '../MiOrden'
 import NotFound from '../NotFound'
-import SignIn from '../SignIn'
+import IniciarSesion from '../IniciarSesion'
 import Navbar from '../../Components/Navbar'
 import './App.css'
 
 const AppRoutes = () => {
   let routes = useRoutes([
     { path: '/', element: <Home />, },
-    { path: '/MyAccount', element: <MyAccount />, },
-    { path: '/MyOrder', element: <MyOrder />, },
+    { path: '/micuenta', element: <MiCuenta />, },
+    { path: '/miorden', element: <MiOrden />, },
     { path: '/*', element: <NotFound />, },
-    { path: '/SignIn', element: <SignIn />, },
+    { path: '/iniciarsesion', element: <IniciarSesion />, },
   ])
   return routes
 }
