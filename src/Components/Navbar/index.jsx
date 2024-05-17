@@ -1,7 +1,11 @@
+import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
+import { TiendaCartaContext } from '../../Context'
 
 const Navbar = () => {
-    const activeStyle = 'underline underline-offset-4'
+    const context = useContext(TiendaCartaContext)
+    const activeStyle = 'underline underline-offset-4'    
+
     return(
         <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light'>
             <ul className='flex items-center gap-3'>
@@ -53,7 +57,7 @@ const Navbar = () => {
                     econ@econ.com
                 </li>
                 <li>
-                    <NavLink 
+                <NavLink 
                         to = '/MiCuenta'
                         className={({isActive}) => 
                             isActive ? activeStyle: undefined
@@ -61,14 +65,30 @@ const Navbar = () => {
                         >
                         Mi Cuenta
                     </NavLink>
+                </li>
+                <li>
                     <NavLink 
-                        to = '/IniciarSesion'
-                        className={({isActive}) => 
-                            isActive ? activeStyle: undefined
-                        }
-                        >
-                        Iniciar Sesión
+                            to = '/MiCuenta'
+                            className={({isActive}) => 
+                                isActive ? activeStyle: undefined
+                            }
+                            >
+                            Mi Cuenta
                     </NavLink>
+                </li>
+
+                <li>
+                    <NavLink 
+                            to = '/IniciarSesion'
+                            className={({isActive}) => 
+                                isActive ? activeStyle: undefined
+                            }
+                            >
+                            Iniciar Sesión
+                    </NavLink>
+                </li>
+
+                <li>
                     <NavLink 
                         to = '/MiOrden'
                         className={({isActive}) => 
@@ -78,6 +98,10 @@ const Navbar = () => {
                         Mi Orden
                     </NavLink>
                 </li>
+                   
+                <li>
+                    Pedido {context.count}
+                </li>               
             </ul>
         </nav>
     )

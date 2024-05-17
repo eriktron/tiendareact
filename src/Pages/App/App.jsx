@@ -1,4 +1,5 @@
 import { useRoutes, BrowserRouter } from 'react-router-dom'
+import { TiendaCartaProvider } from '../../Context'
 import Home from '../Home'
 import MiCuenta from '../MiCuenta'
 import MiOrden from '../MiOrden'
@@ -21,10 +22,12 @@ const AppRoutes = () => {
 const App = () => {
  
   return (
-    <BrowserRouter>
-      <AppRoutes />
-      <Navbar />
-    </BrowserRouter>
+    <TiendaCartaProvider>
+        <BrowserRouter>
+            <AppRoutes />
+            <Navbar />
+        </BrowserRouter>
+    </TiendaCartaProvider> 
   )
 }
 
