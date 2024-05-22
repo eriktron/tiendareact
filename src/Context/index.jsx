@@ -8,9 +8,13 @@ export const TiendaCartaProvider = ( {children} ) => {
 
     //Product Detail - Abrir/Cerrar
     const [isProductDetailOpen, setIsProductDetailOpen] = useState(false)
-    // console.log('COUNT:', count)
     const openProductDetail = () => setIsProductDetailOpen(true)
     const closeProductDetail = () => setIsProductDetailOpen(false)
+
+    //Chekout Side Menu - Abrir/Cerrar
+    const [isCheckoutSideMenuOpen, setIsCheckoutSideMenuOpen] = useState(false)
+    const openCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(true)
+    const closeCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(false)
 
     //Product Detail - Mostrar Productos
     const [productToShow, setProductToShow] = useState({}) // modo objeto
@@ -27,7 +31,10 @@ export const TiendaCartaProvider = ( {children} ) => {
             productToShow,
             setProductToShow,
             cartProducts,
-            setCartProducts
+            setCartProducts,
+            isCheckoutSideMenuOpen,
+            openCheckoutSideMenu,
+            closeCheckoutSideMenu
         }}>
             {children}
         </TiendaCartaContext.Provider>

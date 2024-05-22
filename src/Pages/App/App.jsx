@@ -6,6 +6,7 @@ import MiOrden from '../MiOrden'
 import NotFound from '../NotFound'
 import IniciarSesion from '../IniciarSesion'
 import Navbar from '../../Components/Navbar'
+import CheckoutSideMenu from '../../CheckoutSideMenu'
 import './App.css'
 
 const AppRoutes = () => {
@@ -26,6 +27,7 @@ const App = () => {
         <BrowserRouter>
             <AppRoutes />
             <Navbar />
+            <CheckoutSideMenu />
         </BrowserRouter>
     </TiendaCartaProvider> 
   )
