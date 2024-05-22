@@ -13,7 +13,9 @@ export const TiendaCartaProvider = ( {children} ) => {
     const closeProductDetail = () => setIsProductDetailOpen(false)
 
     //Product Detail - Mostrar Productos
-    const [productToShow, setProductToShow] = useState({})
+    const [productToShow, setProductToShow] = useState({}) // modo objeto
+    //TiendaCarta - Agregando productos
+    const [cartProducts, setCartProducts] = useState([])    //modo array de objetos
     
     return(
         <TiendaCartaContext.Provider value={{
@@ -23,7 +25,9 @@ export const TiendaCartaProvider = ( {children} ) => {
             closeProductDetail,
             isProductDetailOpen,
             productToShow,
-            setProductToShow
+            setProductToShow,
+            cartProducts,
+            setCartProducts
         }}>
             {children}
         </TiendaCartaContext.Provider>

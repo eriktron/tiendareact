@@ -9,6 +9,11 @@ const Card = (data) => {
     context.openProductDetail()
     context.setProductToShow(productDetail)
   }
+  
+  const addProductsToCart = (productData) =>{
+    context.setCount(context.count + 1)
+    context.setCartProducts([...context.cartProducts, productData])
+  }
 
   return (
     <div 
@@ -24,10 +29,10 @@ const Card = (data) => {
           alt={data.data.title} 
           // referrerpolicy="no-referrer" 
         />
-        <div className='absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1'
-        onClick={() => context.setCount(context.count + 1)}>
-          +
-        </div>
+        <div 
+          className='absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1'
+          onClick={() => addProductsToCart(data.data)}
+        >+</div>
       </figure>
       <p className='flex justify-between'>
         <span className='text-sm font-light'>{data.data.title}</span>
