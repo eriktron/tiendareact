@@ -18,6 +18,25 @@ const Card = (data) => {
     context.closeProductDetail()
   }
 
+  const renderIcon = (id) => {
+    const isInCart = context.cartProducts.filter(abc => abc.id === id).length > 0
+
+    if (isInCart){
+      return (
+        <div 
+          className='absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1'
+        >ok</div>
+      )
+    }else{
+      return(
+        <div 
+          className='absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1'
+          onClick={(event) => addProductsToCart(event, data.data)} //aqui estamos pasando dos parametros la accion del evento y la data
+        >+</div>
+      )
+    }
+  }
+
   return (
     <div 
       className='bg-white cursor-pointer w-56 h-60 rounded-lg'
@@ -32,10 +51,7 @@ const Card = (data) => {
           alt={data.data.title} 
           // referrerpolicy="no-referrer" 
         />
-        <div 
-          className='absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1'
-          onClick={(event) => addProductsToCart(event, data.data)} //aqui estamos pasando dos parametros la accion del evento y la data
-        >+</div>
+        {renderIcon(data.data.id)}
       </figure>
       <p className='flex justify-between'>
         <span className='text-sm font-light'>{data.data.title}</span>
