@@ -1,11 +1,16 @@
 import { useContext } from 'react'
-import { TiendaCartaContext } from '../Context'
-import OrderCard from '../Components/OrderCard'
+import { TiendaCartaContext } from '../../Context'
+import OrderCard from '../OrderCard'
 import './styles.css'
 
 const CheckoutSideMenu = () => {
     const context = useContext(TiendaCartaContext)
     console.log('Carta: ', context.cartProducts)
+
+    const handleDelete = (id) => {
+        const filteredProducts = context.cartProducts.filter(product => product.id != id)
+        context.setCartProducts(filteredProducts)
+    }
     return (
         <aside 
             className={`${context.isCheckoutSideMenuOpen ? 'flex' : 'hidden' } checkout-side-menu flex-col fixed right-0 border border-black rounded-lg bg-white`}>
@@ -20,10 +25,12 @@ const CheckoutSideMenu = () => {
             {
                 context.cartProducts.map(product => (
                     <OrderCard 
+                        id={product.id}
                         key = {product.id}
                         title = {product.title}
                         imageUrl = {product.image}
                         price={product.price}
+                        handleDelete={handleDelete}
                     />
                 ))
             }

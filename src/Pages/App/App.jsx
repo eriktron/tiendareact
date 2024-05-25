@@ -6,7 +6,7 @@ import MiOrden from '../MiOrden'
 import NotFound from '../NotFound'
 import IniciarSesion from '../IniciarSesion'
 import Navbar from '../../Components/Navbar'
-import CheckoutSideMenu from '../../CheckoutSideMenu'
+import CheckoutSideMenu from '../../Components/CheckoutSideMenu'
 import './App.css'
 
 const AppRoutes = () => {

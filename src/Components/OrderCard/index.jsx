@@ -1,5 +1,6 @@
 const OrderCard = props => {
-    const { title, imageUrl, price } = props
+    const { id, title, imageUrl, price, handleDelete } = props
+
     return (
         <div className="flex justify-between items-center mb-3">
             <div className="flex items-center gap-2">
@@ -8,8 +9,9 @@ const OrderCard = props => {
                 </figure>
                 <p className="text-sm font-light">{title}</p>
             </div>
-            <div>
+            <div className="flex items-center gap-2">
                 <p className='text-lg font-medium'>{price}</p>
+                <p onClick={() => handleDelete(id)} className='cursor-pointer h-6 w-6 text-black'>x</p>
             </div>
         </div>
     )
