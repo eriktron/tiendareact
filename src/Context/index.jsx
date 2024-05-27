@@ -21,6 +21,9 @@ export const TiendaCartaProvider = ( {children} ) => {
     //TiendaCarta - Agregando productos
     const [cartProducts, setCartProducts] = useState([])    //modo array de objetos
     
+    //TiendaCarta - Ordenes
+    const [order, setOrder] = useState([])    //modo array
+
     return(
         <TiendaCartaContext.Provider value={{
             count,
@@ -34,7 +37,9 @@ export const TiendaCartaProvider = ( {children} ) => {
             setCartProducts,
             isCheckoutSideMenuOpen,
             openCheckoutSideMenu,
-            closeCheckoutSideMenu
+            closeCheckoutSideMenu,
+            order,
+            setOrder
         }}>
             {children}
         </TiendaCartaContext.Provider>
