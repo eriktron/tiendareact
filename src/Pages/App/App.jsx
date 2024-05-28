@@ -14,6 +14,7 @@ const AppRoutes = () => {
     { path: '/', element: <Home />, },
     { path: '/micuenta', element: <MiCuenta />, },
     { path: '/miorden', element: <MiOrden />, },
+    { path: '/miorden/last', element: <MiOrden />, },
     { path: '/*', element: <NotFound />, },
     { path: '/iniciarsesion', element: <IniciarSesion />, },
   ])
