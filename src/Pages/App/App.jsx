@@ -3,6 +3,7 @@ import { TiendaCartaProvider } from '../../Context'
 import Home from '../Home'
 import MiCuenta from '../MiCuenta'
 import MiOrden from '../MiOrden'
+import MisOrdenes from '../MisOrdenes'
 import NotFound from '../NotFound'
 import IniciarSesion from '../IniciarSesion'
 import Navbar from '../../Components/Navbar'
@@ -14,6 +15,7 @@ const AppRoutes = () => {
     { path: '/', element: <Home />, },
     { path: '/micuenta', element: <MiCuenta />, },
     { path: '/miorden', element: <MiOrden />, },
+    { path: '/misordenes', element: <MisOrdenes />, },
     { path: '/miorden/last', element: <MiOrden />, },
     { path: '/*', element: <NotFound />, },
     { path: '/iniciarsesion', element: <IniciarSesion />, },
