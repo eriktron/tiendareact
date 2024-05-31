@@ -5,7 +5,7 @@ const OrdersCard = props => {
     return (
         <div className="flex justify-between items-center mb-3 border border-black">
            <p>
-            <span>01.02.23</span>
+            <span>01.01.24</span>
             <span>{totalProducts}</span>
             <span>{totalPrice}</span>
            </p>
