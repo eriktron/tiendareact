@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useState, useEffect } from 'react'
 
 export const TiendaCartaContext = createContext()
 
@@ -24,6 +24,16 @@ export const TiendaCartaProvider = ( {children} ) => {
     //TiendaCarta - Ordenes
     const [order, setOrder] = useState([])    //modo array
 
+    //enviar productos
+    const [items, setItems] = useState(null)
+
+    useEffect( ()=>{    
+      fetch('https://fakestoreapi.com/products')
+        .then(response => response.json())
+        .then(data => setItems(data))
+    }, [])
+  
+
     return(
         <TiendaCartaContext.Provider value={{
             count,
@@ -39,7 +49,9 @@ export const TiendaCartaProvider = ( {children} ) => {
             openCheckoutSideMenu,
             closeCheckoutSideMenu,
             order,
-            setOrder
+            setOrder,
+            items,
+            setItems
         }}>
             {children}
         </TiendaCartaContext.Provider>
