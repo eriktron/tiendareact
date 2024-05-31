@@ -17,10 +17,10 @@ function MisOrdenes() {
             {
                 context.order.map((order, index) => (
                     <Link key={index} to={`/misordenes/${index}`}>
-                    <OrdersCard 
-                        totalPrice={order.totalPrice} 
-                        totalProducts={order.totalProducts} />
-                </Link>  
+                        <OrdersCard 
+                            totalPrice={order.totalPrice} 
+                            totalProducts={order.totalProducts} />
+                    </Link>  
                 ))
             }
             <OrdersCard />       

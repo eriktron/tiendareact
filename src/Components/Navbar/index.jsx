@@ -66,16 +66,6 @@ const Navbar = () => {
                         Mi Cuenta
                     </NavLink>
                 </li>
-                <li>
-                    <NavLink 
-                            to = '/MiCuenta'
-                            className={({isActive}) => 
-                                isActive ? activeStyle: undefined
-                            }
-                            >
-                            Mi Cuenta
-                    </NavLink>
-                </li>
 
                 <li>
                     <NavLink 

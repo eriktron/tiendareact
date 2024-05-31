@@ -16,6 +16,8 @@ const AppRoutes = () => {
     { path: '/micuenta', element: <MiCuenta />, },
     { path: '/miorden', element: <MiOrden />, },
     { path: '/misordenes', element: <MisOrdenes />, },
+    { path: '/misordenes/last', element: <MiOrden />, },
+    { path: '/misordenes/:id', element: <MiOrden />, },
     { path: '/miorden/last', element: <MiOrden />, },
     { path: '/*', element: <NotFound />, },
     { path: '/iniciarsesion', element: <IniciarSesion />, },
