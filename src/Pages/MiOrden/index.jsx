@@ -14,7 +14,7 @@ function MiOrden() {
     return (      
         <Layaout>
              <div className="flex item-center justify-center relative w-80 mb-6">
-                <h1>Mi Orden</h1>
+                <h1 className='font-medium text-xl'>Mi Orden</h1>
                 <Link to='/misordenes' className="absolute left-0">
                     <p>Atras</p>
                 </Link>
