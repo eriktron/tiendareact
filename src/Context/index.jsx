@@ -23,9 +23,14 @@ export const TiendaCartaProvider = ( {children} ) => {
     
     //TiendaCarta - Ordenes
     const [order, setOrder] = useState([])    //modo array
+    const [filtroItem, setFiltroItem] = useState(null)    //modo array
 
     //enviar productos
     const [items, setItems] = useState(null)
+
+    //enviar productos por titulo
+    const [searchByTitle, setSearchByTitle] = useState(null)
+    console.log('buscador: ', searchByTitle)
 
     useEffect( ()=>{    
       fetch('https://fakestoreapi.com/products')
@@ -33,7 +38,16 @@ export const TiendaCartaProvider = ( {children} ) => {
         .then(data => setItems(data))
     }, [])
   
+    const filteredItemByTitle = (items, searchByTitle) => {
+        return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLowerCase()))
+    }
 
+    useEffect( ()=>{    
+        if(searchByTitle) setFiltroItem(filteredItemByTitle(items, searchByTitle))
+    }, [items, searchByTitle])
+
+    console.log('item filtrados: ', filtroItem)
+    
     return(
         <TiendaCartaContext.Provider value={{
             count,
@@ -51,7 +65,11 @@ export const TiendaCartaProvider = ( {children} ) => {
             order,
             setOrder,
             items,
-            setItems
+            setItems,
+            searchByTitle,
+            setSearchByTitle,
+            filtroItem,
+            setFiltroItem
         }}>
             {children}
         </TiendaCartaContext.Provider>
